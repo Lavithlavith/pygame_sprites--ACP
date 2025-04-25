@@ -1,20 +1,15 @@
 import pygame
 pygame.init()
 
-
 screen = pygame.display.set_mode((400, 300))
-pygame.display.set_caption(" Rectangle Game")
-
+pygame.display.set_caption("Rectangle Game")
 
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 BLUE = (0, 0, 255)
 
-
-
 player = pygame.Rect(50, 50, 50, 50)
 second = pygame.Rect(200, 150, 50, 50)
-
 
 speed = 0.7
 
@@ -24,7 +19,6 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    
     keys = pygame.key.get_pressed()
     if keys[pygame.K_UP]:
         player.y -= speed
@@ -36,10 +30,10 @@ while running:
         player.x += speed
 
     
-        screen.fill(WHITE)
-        pygame.draw.rect(screen, RED, player)
-        pygame.draw.rect(screen, BLUE, second)
-        pygame.display.flip()
+    screen.fill(WHITE)
+    pygame.draw.rect(screen, RED, player)
+    pygame.draw.rect(screen, BLUE, second)
+    pygame.display.flip()
 
 
 pygame.quit()
